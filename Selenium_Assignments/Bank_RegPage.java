@@ -25,7 +25,7 @@ public class Bank_RegPage
 		Thread.sleep(2000);
 		
 		Select Country=new Select(driver.findElement(By.id("selCountry")));
-		Country.selectByVisibleText("India");
+		Country.selectByVisibleText("India"); 
 		
 		WebElement Mobilenum=driver.findElement(By.name("mobileNo"));
 		Mobilenum.sendKeys("9545820014"); 
