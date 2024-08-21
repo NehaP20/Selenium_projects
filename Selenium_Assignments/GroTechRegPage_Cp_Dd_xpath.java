@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Copy_paste_class {
+public class GroTechRegPage_Cp_Dd_xpath // using xpath // dropdown // copy paste 
+{
 	public static void main(String[] args) throws InterruptedException 
 	{
 		ChromeDriver driver=new ChromeDriver();

@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Class2 {
+public class GChrome_India_Enter {
 
 	public static void main(String[] args) 
 	{

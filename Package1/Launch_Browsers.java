@@ -1,5 +1,4 @@
 package Package1;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 public class Launch_Browsers 
 {
@@ -8,10 +7,11 @@ public class Launch_Browsers
 		ChromeDriver driver=new ChromeDriver();
 		driver.get("https://www.google.com");
 		Thread.sleep(2000);
-		//c1.close();
-		driver.quit();
-		
-		
+		//driver.close();
+		//driver.quit();
+		driver.manage().window().maximize();
+		driver.getWindowHandles();
+		//driver.getWindowHandle();
+		driver.manage().window().minimize();
 	}
-
 }
