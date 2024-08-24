@@ -23,8 +23,8 @@ public class GroTechRegPage_Cp_Dd_xpath // using xpath // dropdown // copy paste
 		Id.sendKeys("neha.p@gmail.com");
 		WebElement pd=driver.findElement(By.xpath("(//input)[32]"));
 		pd.sendKeys("Patil");
-		WebElement radiobutton=driver.findElement(By.xpath("(//input)[34]"));
-		radiobutton.click();
+		WebElement gender=driver.findElement(By.xpath("(//input)[34]"));
+		gender.click();
 		
 		Select Skills=new Select(driver.findElement(By.name("Skills")));
 		Skills.selectByIndex(1);
@@ -46,8 +46,17 @@ public class GroTechRegPage_Cp_Dd_xpath // using xpath // dropdown // copy paste
 		Select Religion=new Select(driver.findElement(By.id("Relegion")));
 		Religion.selectByVisibleText("Hindu"); 
 		
-		WebElement checkbox=driver.findElement(By.xpath("(//input)[37]"));
-		checkbox.click();
+		WebElement choosefile=driver.findElement(By.id("file"));
+		choosefile.sendKeys("C:\\Users\\Asus\\Downloads\\Test File.pdf");
+		
+		WebElement relocate=driver.findElement(By.xpath("(//input)[37]"));
+		relocate.click();
+		
+		WebElement submit=driver.findElement(By.name("Submit"));
+		submit.click();
+		
+		//Thread.sleep(2000);
+		//driver.navigate().refresh();
 
 	}
 

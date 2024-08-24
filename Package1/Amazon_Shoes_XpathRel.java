@@ -19,10 +19,7 @@ public class Amazon_Shoes_XpathRel {
 		shoe.click();
 		
 		
-		
-		
-		
-
+		driver.quit();
 	}
 
 }
