@@ -55,9 +55,9 @@ public class GroTechRegPage_Cp_Dd_xpath // using xpath // dropdown // copy paste
 		WebElement submit=driver.findElement(By.name("Submit"));
 		submit.click();
 		
-		//Thread.sleep(2000);
-		//driver.navigate().refresh();
-
+		driver.switchTo().alert().accept();
+		driver.navigate().refresh();
+	
 	}
 
 }

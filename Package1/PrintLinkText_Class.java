@@ -8,8 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PrintLinkText_Class {
 	public static void main(String[] args) {
 		ChromeDriver driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.navigate().to("https://www.amazon.in");
+		//driver.navigate().to("https://www.amazon.in");
+		driver.navigate().to("https://www.google.com");
+		driver.manage().window().minimize();
 		
 		List<WebElement> l1=driver.findElements(By.tagName("a"));
 		int count=l1.size();
@@ -21,8 +22,7 @@ public class PrintLinkText_Class {
 			String linktext=e1.getText();
 			System.out.println(url);
 			System.out.println(linktext);
-			
-			
+		
 		}
 
 	}

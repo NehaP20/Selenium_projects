@@ -1,4 +1,4 @@
-package Package1;
+package Selenium_Assignments;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -9,11 +9,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GoogleBroken_links_Class {
-	public static void main(String[] args) throws IOException, InterruptedException {
+public class BrokenLinks_Counts {
+	static int validlinkcount=0;
+	static int brokenlinkcount=0;
+	static int handledlinkcount=0;
+	//static int invalidlinkCount=0;
+
+	public static void main(String[] args) throws InterruptedException, IOException 
+	{
 		ChromeDriver driver=new ChromeDriver();
 		driver.manage().window().minimize();
-		driver.navigate().to("https://www.google.com");
+		driver.navigate().to("https://www.amazon.com");
 		Thread.sleep(3000);
 		List<WebElement> l1=driver.findElements(By.tagName("a"));
 		int count=l1.size();
@@ -24,27 +30,34 @@ public class GoogleBroken_links_Class {
 			String url=e1.getAttribute("href");
 			System.out.println(url);
 			verify_each_links(url);
+			
 		}
+		System.out.println("Valid Links: " + validlinkcount);
+        System.out.println("Broken Links: " + brokenlinkcount);
+        System.out.println("Handled Links: " + handledlinkcount);
+     	
 	}
 	static void verify_each_links(String url) throws IOException
 	{
 try {	
 		URL u1=new URL(url);
 		HttpURLConnection h1=(HttpURLConnection) u1.openConnection();
-		
-		if(h1.getResponseCode()==200)
+		int b1=h1.getResponseCode();
+		if(b1==200)
 		{
 			System.out.println("It is a valid links " + h1.getResponseCode()+ "  " +h1.getResponseMessage());
+			validlinkcount++;
 		}
 		else
 		{
 			System.out.println("It is a broken links"+  h1.getResponseCode() + "  "+ h1.getResponseMessage());
+			brokenlinkcount++;
 		}
-}
+	}
 catch(MalformedURLException a1)
 {
 	System.out.println("It is a broken links-Handled");
+	handledlinkcount++;
 }	
 	}
-
 }

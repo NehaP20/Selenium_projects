@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class Utube_Subscribe_XpathRelative {
 	public static void main(String[] args) throws InterruptedException 
@@ -21,9 +20,8 @@ public class Utube_Subscribe_XpathRelative {
 		WebElement subscbutton=driver.findElement(By.partialLinkText("Subscribe"));
 		subscbutton.click();
 		
-		Actions a1=new Actions(driver);
-		a1.moveToElement(subscbutton).perform();
-
+		WebElement mailid=driver.findElement(By.id("identifierId"));
+		mailid.sendKeys("imnehapatil@gmail.com");
 	}
 
 }
